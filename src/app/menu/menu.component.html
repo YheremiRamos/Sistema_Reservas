@@ -1,0 +1,37 @@
+<body>
+        <div class="sidebar">
+            <div class="sidebar-header">
+                <br>
+            </div>
+            <ul class="sidebar-menu">
+                <li *ngIf="!isLogged">
+                    <a class="nav-link"  routerLink="/login"><i class="fas fa-sign-in-alt"></i> Iniciar Sesión</a>
+                </li>
+                <li *ngIf="isLogged" (click)="onLogOut()">
+                    <a class="nav-link" style="cursor: pointer;"><i class="fas fa-door-open" ></i> Cerrar Sesión</a>
+                </li>
+            </ul>
+        </div>
+        <div class="sidebar" *ngIf="isLogged">
+            <div class="sidebar-header">
+                <h1><strong>HrfSac</strong></h1>
+                <br>
+                <div class="profile-picture">
+                    <a href="https://imgbb.com/"><img src="https://i.ibb.co/M6FM0BD/user-1.jpg" alt="user-1" border="0"></a><br /><a target='_blank' href='https://es.imgbb.com/'></a><br />                </div>
+                <h6 class="username">{{nombreUsuario}}</h6>
+            </div>
+            <ul class="sidebar-menu" *ngIf="isLogged">
+                <li><a href="">Inicio</a></li>
+                <li><a href="addCrearEvento">Crear Evento</a></li>
+                <li><a href="addExplorarEvento">Explorar Eventos</a></li>
+                <li><a href="addMisEvento">Mis Eventos</a></li>
+                <li *ngIf="isLogged" (click)="onLogOut()"><a href="verRegistraIngreso">Cerrar sesión</a></li>
+
+
+            </ul>
+        </div>
+
+</body>
+
+
+

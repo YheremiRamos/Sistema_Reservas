@@ -1,0 +1,123 @@
+<div class="main-container">
+    <app-menu></app-menu>
+    <div class="content">
+        <div class="container">
+            <!-- Header -->
+            <h1 class="title">Explorar Eventos</h1>
+
+            <!-- Sección de Gestión de Eventos (Organizador) -->
+            <div *ngIf="isOrganizer" class="organizer-section">
+                <h2>Mis Eventos</h2>
+                <mat-table [dataSource]="misEventos" class="mat-elevation-z8">
+                    <ng-container matColumnDef="idEvento">
+                        <mat-header-cell *matHeaderCellDef> ID Evento </mat-header-cell>
+                        <mat-cell *matCellDef="let evento"> {{ evento.idEvento }} </mat-cell>
+                    </ng-container>
+
+                    <ng-container matColumnDef="idOrganizador">
+                        <mat-header-cell *matHeaderCellDef> ID Organizador </mat-header-cell>
+                        <mat-cell *matCellDef="let evento"> {{ evento.idOrganizador }} </mat-cell>
+                    </ng-container>
+
+                    <ng-container matColumnDef="titulo">
+                        <mat-header-cell *matHeaderCellDef> Título </mat-header-cell>
+                        <mat-cell *matCellDef="let evento"> {{ evento.titulo }} </mat-cell>
+                    </ng-container>
+
+                    <ng-container matColumnDef="descripcion">
+                        <mat-header-cell *matHeaderCellDef> Descripción </mat-header-cell>
+                        <mat-cell *matCellDef="let evento"> {{ evento.descripcion }} </mat-cell>
+                    </ng-container>
+
+                    <ng-container matColumnDef="ubicacion">
+                        <mat-header-cell *matHeaderCellDef> Ubicación </mat-header-cell>
+                        <mat-cell *matCellDef="let evento"> {{ evento.ubicacion }} </mat-cell>
+                    </ng-container>
+
+                    <ng-container matColumnDef="capacidadMaxima">
+                        <mat-header-cell *matHeaderCellDef> Capacidad </mat-header-cell>
+                        <mat-cell *matCellDef="let evento"> {{ evento.capacidadMaxima }} </mat-cell>
+                    </ng-container>
+
+                    <ng-container matColumnDef="fechaHora">
+                        <mat-header-cell *matHeaderCellDef> Fecha y Hora </mat-header-cell>
+                        <mat-cell *matCellDef="let evento"> {{ evento.fechaHora | date: 'medium' }} </mat-cell>
+                    </ng-container>
+
+                    <ng-container matColumnDef="esPublico">
+                        <mat-header-cell *matHeaderCellDef> Público </mat-header-cell>
+                        <mat-cell *matCellDef="let evento"> {{ evento.esPublico ? 'Sí' : 'No' }} </mat-cell>
+                    </ng-container>
+
+                    <ng-container matColumnDef="reservas">
+                        <mat-header-cell *matHeaderCellDef> Reservas </mat-header-cell>
+                        <mat-cell *matCellDef="let evento"> {{ evento.reservas }} </mat-cell>
+                    </ng-container>
+
+                    <ng-container matColumnDef="acciones">
+                        <mat-header-cell *matHeaderCellDef> Acciones </mat-header-cell>
+                        <mat-cell *matCellDef="let evento">
+                            <button mat-button color="accent" (click)="editarEvento(evento)">Editar</button>
+                            <button mat-button color="warn" (click)="eliminarEvento(evento.idEvento)">Eliminar</button>
+                        </mat-cell>
+                    </ng-container>
+
+                    <mat-header-row *matHeaderRowDef="displayedColumns"></mat-header-row>
+                    <mat-row *matRowDef="let row; columns: displayedColumns;"></mat-row>
+                </mat-table>
+            </div>
+
+            <!-- Sección de Explorar Eventos Públicos (Participante) 
+            <div *ngIf="isParticipant" class="participant-section">
+                <h2>Eventos Públicos</h2>
+                <mat-table [dataSource]="eventosFiltrados" class="mat-elevation-z8">
+                    <ng-container matColumnDef="idEvento">
+                        <mat-header-cell *matHeaderCellDef> ID Evento </mat-header-cell>
+                        <mat-cell *matCellDef="let evento"> {{ evento.idEvento }} </mat-cell>
+                    </ng-container>
+
+                    <ng-container matColumnDef="titulo">
+                        <mat-header-cell *matHeaderCellDef> Título </mat-header-cell>
+                        <mat-cell *matCellDef="let evento"> {{ evento.titulo }} </mat-cell>
+                    </ng-container>
+
+                    <ng-container matColumnDef="descripcion">
+                        <mat-header-cell *matHeaderCellDef> Descripción </mat-header-cell>
+                        <mat-cell *matCellDef="let evento"> {{ evento.descripcion }} </mat-cell>
+                    </ng-container>
+
+                    <ng-container matColumnDef="ubicacion">
+                        <mat-header-cell *matHeaderCellDef> Ubicación </mat-header-cell>
+                        <mat-cell *matCellDef="let evento"> {{ evento.ubicacion }} </mat-cell>
+                    </ng-container>
+
+                    <ng-container matColumnDef="fechaHora">
+                        <mat-header-cell *matHeaderCellDef> Fecha y Hora </mat-header-cell>
+                        <mat-cell *matCellDef="let evento"> {{ evento.fechaHora | date: 'medium' }} </mat-cell>
+                    </ng-container>
+
+                    <ng-container matColumnDef="reservas">
+                        <mat-header-cell *matHeaderCellDef> Reservas </mat-header-cell>
+                        <mat-cell *matCellDef="let evento"> {{ evento.reservas }} </mat-cell>
+                    </ng-container>
+
+                    <ng-container matColumnDef="acciones">
+                        <mat-header-cell *matHeaderCellDef> Acciones </mat-header-cell>
+                        <mat-cell *matCellDef="let evento">
+                            <button mat-button color="primary" (click)="verDetalleEvento(evento)">Ver Detalles</button>
+                            <button mat-button color="accent" (click)="registrarseEvento(evento)">Registrarse</button>
+                        </mat-cell>
+                    </ng-container>
+
+                    <mat-header-row *matHeaderRowDef="displayedColumns"></mat-header-row>
+                    <mat-row *matRowDef="let row; columns: displayedColumns;"></mat-row>
+                </mat-table>
+            </div>
+-->
+
+
+
+
+        </div>
+    </div>
+</div>

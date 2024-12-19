@@ -1,0 +1,118 @@
+<div class="main-container">
+    <app-menu></app-menu>
+    <div class="content">
+        <div class="container">
+            <!-- Header -->
+            <h1 class="title">Crear Eventos</h1>
+
+            <div class="organizer-section">
+                <h2>Crear Evento</h2>
+
+                <mat-horizontal-stepper linear #stepper>
+
+                    <!-- Paso 1: Datos del Evento -->
+                    <mat-step [stepControl]="formCrearEvento" label="Datos del Evento">
+                        <form [formGroup]="formCrearEvento">
+                            <div class="row">
+                                <mat-toolbar
+                                    style="background:#4B9DA6; border-radius: 20px; padding-left: 5%;">
+                                    <h1>Datos del Evento</h1>
+                                </mat-toolbar>
+                            </div>
+
+                            <div class="col-md-20" style="margin: 0 5%;">
+                                <div class="inputContent">
+                                    <h5>1. ID Organizador:</h5>
+                                    <mat-form-field class="col-md-9">
+                                        <mat-label>Ingrese el ID del organizador</mat-label>
+                                        <input matInput formControlName="idOrganizador">
+                                    </mat-form-field>
+                                </div>
+                            </div>
+
+                            <div class="col-md-20" style="margin: 0 5%;">
+                                <div class="inputContent">
+                                    <h5>2. Título:</h5>
+                                    <mat-form-field class="col-md-9">
+                                        <mat-label>Ingrese el título del evento</mat-label>
+                                        <input matInput formControlName="titulo">
+                                    </mat-form-field>
+                                </div>
+                            </div>
+
+                            <div class="col-md-20" style="margin: 0 5%;">
+                                <div class="inputContent">
+                                    <h5>3. Descripción:</h5>
+                                    <mat-form-field class="col-md-9">
+                                        <mat-label>Ingrese la descripción del evento</mat-label>
+                                        <textarea matInput formControlName="descripcion"></textarea>
+                                    </mat-form-field>
+                                </div>
+                            </div>
+
+                            <div class="col-md-20" style="margin: 0 5%;">
+                                <div class="inputContent">
+                                    <h5>4. Ubicación:</h5>
+                                    <mat-form-field class="col-md-9">
+                                        <mat-label>Ingrese la ubicación del evento</mat-label>
+                                        <input matInput formControlName="ubicacion">
+                                    </mat-form-field>
+                                </div>
+                            </div>
+
+                            <div class="col-md-20" style="margin: 0 5%;">
+                                <div class="inputContent">
+                                    <h5>5. Capacidad Máxima:</h5>
+                                    <mat-form-field class="col-md-9">
+                                        <mat-label>Ingrese la capacidad máxima</mat-label>
+                                        <input matInput type="number" formControlName="capacidadMaxima">
+                                    </mat-form-field>
+                                </div>
+                            </div>
+
+                            <div class="col-md-20" style="margin: 0 5%;">
+                                <div class="inputContent">
+                                    <h5>6. Fecha y Hora:</h5>
+                                    <mat-form-field class="col-md-9">
+                                        <mat-label>Ingrese la fecha y hora</mat-label>
+                                        <input matInput type="datetime-local" formControlName="fechaHora">
+                                    </mat-form-field>
+                                </div>
+                            </div>
+
+                            <div class="col-md-20" style="margin: 0 5%;">
+                                <div class="inputContent">
+                                    <h5>7. Público:</h5>
+                                    <mat-form-field class="col-md-9">
+                                        <mat-label>¿El evento es público?</mat-label>
+                                        <mat-select formControlName="esPublico">
+                                            <mat-option [value]="1">Sí</mat-option>
+                                            <mat-option [value]="0">No</mat-option>
+                                        </mat-select>
+                                    </mat-form-field>
+                                </div>
+                            </div>
+
+                            <div class="col-md-20" style="margin: 0 5%;">
+                                <div class="inputContent">
+                                    <h5>8. Reservas:</h5>
+                                    <mat-form-field class="col-md-9">
+                                        <mat-label>Ingrese el número de reservas</mat-label>
+                                        <input matInput type="number" formControlName="reservas">
+                                    </mat-form-field>
+                                </div>
+                            </div>
+
+                            <div class="row btnEnd">
+                                <button mat-raised-button color="primary" (click)="stepper.previous()">Atrás</button>
+                                <button mat-raised-button color="primary" (click)="stepper.next()">Siguiente
+                                    <mat-icon>arrow_forward</mat-icon>
+                                </button>
+                            </div>
+                        </form>
+                    </mat-step>
+                </mat-horizontal-stepper>
+            </div>
+        </div>
+    </div>
+</div>
